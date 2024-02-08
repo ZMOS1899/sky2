@@ -39,7 +39,7 @@ public class DishController {
 
         List<DishVO> list  = (List<DishVO>) redisTemplate.opsForValue().get(key);
 
-        if (list != null && list.size() > 0) {
+        if (list != null && !list.isEmpty()) {
             return Result.success(list);
         }
 
